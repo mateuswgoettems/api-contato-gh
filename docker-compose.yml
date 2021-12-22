@@ -1,0 +1,16 @@
+version: '3'
+services:
+  postgres:
+    container_name: pg-contato-gh
+    restart: always
+    image: postgres:latest
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_USER=contato
+      - POSTGRES_PASSWORD=Super@3
+      - POSTGRES_DB=contato
+    volumes:
+      - ../pg-contato-gh/:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
